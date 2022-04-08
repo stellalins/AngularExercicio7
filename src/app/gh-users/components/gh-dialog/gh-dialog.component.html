@@ -1,0 +1,62 @@
+<div mat-dialog-content>
+   
+  <div class="container">
+    <mat-progress-spinner 
+      color="accent" 
+      mode="indeterminate" 
+      *ngIf="user == null; else content">
+    </mat-progress-spinner>
+
+      <ng-template #content>
+        
+        <figure class="img-perfil">
+          <img [src]="user?.avatar_url" alt="Foto do Perfil">
+        </figure>
+
+          <h2 mat-dialog-title>{{username}}</h2>
+
+          <p><a [href]="user?.html_url" target="_blank"> <b>{{user?.name}} </b></a></p>
+
+        <div class="bio">
+              
+            <p>{{user?.bio}}</p>
+
+            <div class="lff">
+              <p><mat-icon>room</mat-icon>{{user?.location}} </p>
+              <p><mat-icon>people</mat-icon>{{user?.followers}} </p>
+              <p> <mat-icon>person</mat-icon> {{user?.following}} </p>
+            </div>
+
+            <div class="cca">
+              <p><b>Conta criada:</b> {{user?.created_at}} </p>
+              <p><b>Atualização:</b> {{user?.updated_at}} </p>
+            </div>
+            
+        </div>
+
+          <h2>Repositórios</h2>
+
+        <div class="containerCard">
+          <mat-card class="card-reposit" *ngFor="let item of reposit">
+
+              <p class="nameRepo"><b><a [href]="item?.html_url">{{item?.name}}</a></b></p>
+
+              <p>{{item?.description}}</p>
+
+            <div class="cua">
+              <p><b>Criado em: </b> {{pegarData(item.created_at)}} </p>
+              <p><b>Atualização: </b> {{pegarData(item.updated_at)}} </p>
+            </div>
+
+            <div class="lsf">
+              <p><mat-icon>fiber_manual_record</mat-icon> {{item?.language}} </p>
+              <p><mat-icon>star</mat-icon> {{item?.stargazers_count}} </p>
+              <p><mat-icon>device_hub</mat-icon> {{item?.forks_count}}</p>
+            </div>
+
+          </mat-card>
+        </div>
+      </ng-template> 
+  </div>
+</div>
+

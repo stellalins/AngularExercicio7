@@ -1,0 +1,58 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    padding: 10px 15px;   
+}
+h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+img{ 
+    border-radius: 50%;
+    height: 60%;
+     
+    margin-bottom: -215px;
+}
+
+.bio{
+    width: 100%;
+}
+.lff{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cca{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card-reposit{
+    background-color: rgb(208, 208, 209);
+    margin-bottom: 2rem;
+    border-radius: 6px;
+}
+.cua{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.lsf{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.namerepo{
+    color: blue;
+}
+.mat-dialog-title{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
